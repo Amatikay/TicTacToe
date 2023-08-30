@@ -15,7 +15,7 @@ class Gamer {
 class PersonGamer: public Gamer {
     public:
     PersonGamer(){};
-    std::pair<unsigned int, unsigned int> inputNextStep();
+    std::pair<unsigned int, unsigned int> inputNextStep(std::istream& input);
 };
 class ComputerGamer: public Gamer {
     public:

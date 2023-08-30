@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "TicTacToe.h"
 
 void TicTacToe::makeChange(const unsigned int x, const unsigned int y, const char symbol) {
@@ -38,7 +39,7 @@ void TicTacToe::play() {
     while (!checkWin() && hasMovesLeft() ){
          std::pair<unsigned int, unsigned int> nextStep;
         if (isPersonGamerTurn == true){
-            nextStep = personGamer.inputNextStep();
+            nextStep = personGamer.inputNextStep(std::cin);
             makeChange(nextStep.first, nextStep.second, 'O');
         }
         if(isPersonGamerTurn == false){

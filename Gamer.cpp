@@ -6,10 +6,10 @@
 #include <cmath>
 #include "Gamer.h"
 
-std::pair<unsigned int, unsigned int> PersonGamer::inputNextStep() {
+std::pair<unsigned int, unsigned int> PersonGamer::inputNextStep(std::istream& input) {
     unsigned int x, y;
     std::cout << "Введите координаты следующего хода:"<<std::endl;
-    std::cin >> x >> y;
+    input >> x >> y;
     return std::make_pair(x, y);
 }
 
