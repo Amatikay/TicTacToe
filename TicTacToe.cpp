@@ -92,3 +92,9 @@ bool TicTacToe::checkWin() {
     // Если ни одна из предыдущих проверок не вернула true, нет победителя
     return false;
 }
+
+TicTacToe::~TicTacToe() {
+    std::cout << "The Game is end. Thank you for game!"<<std::endl;
+    delete personGamer;
+    delete computerGamer;
+}

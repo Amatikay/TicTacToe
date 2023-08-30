@@ -11,6 +11,7 @@ public:
     TicTacToe();
     void printBoard();
     void play();
+    ~TicTacToe();
 private:
     void makeChange(const unsigned int x, const unsigned int y, const char symbol);
     char board[3][3];
