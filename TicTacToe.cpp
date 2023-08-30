@@ -7,24 +7,34 @@
 #include "TicTacToe.h"
 
 void TicTacToe::makeChange(const unsigned int x, const unsigned int y, const char symbol) {
-//    TODO: обработать не верные данные. Например, если x или y больше 2, или если клетка уже занята.
     if ('_' == board[x][y])    {
         board[x][y] = symbol;
     }
 }
-
 TicTacToe::TicTacToe() {
     for (auto & i : board) {
         for (char & j : i) {
             j = '_';
         }
     }
-    personGamer = PersonGamer();
-    computerGamer = ComputerGamer();
+    srand(time(0));
+
+    bool randNumber = rand() % 2;
+    if (randNumber){
+        personChar = '0';
+        computerChar = 'X';
+    }
+    else{
+        personChar = 'X';
+        computerChar = '0';
+    }
+    personGamer = PersonGamer(personChar);
+    computerGamer = ComputerGamer(computerChar);
 }
 
 void TicTacToe::printBoard() {
     std::cout << "\033c";//Очистка терминала.
+    std::cout<<"User char is " << this->personChar << " Computer char is " << this->computerChar << std::endl;
     for (auto & i : board) {
         for (char j : i) {
             std::cout << j << " ";
@@ -40,11 +50,11 @@ void TicTacToe::play() {
          std::pair<unsigned int, unsigned int> nextStep;
         if (isPersonGamerTurn == true){
             nextStep = personGamer.inputNextStep(std::cin);
-            makeChange(nextStep.first, nextStep.second, 'O');
+            makeChange(nextStep.first, nextStep.second, personChar);
         }
         if(isPersonGamerTurn == false){
             nextStep = computerGamer.calculateNextStep(board);
-            makeChange(nextStep.first, nextStep.second, 'X');
+            makeChange(nextStep.first, nextStep.second, computerChar);
         }
         isPersonGamerTurn = !isPersonGamerTurn;
         this->printBoard();

@@ -6,7 +6,6 @@
 #define TIC_TAC_TOE_TICTACTOE_H
 
 #include "Gamer.h"
-//TODO у меня алкогритм ходит крестиками, а человек ноликами. Надо адаптировать
 class TicTacToe {
 public:
     TicTacToe();
@@ -15,9 +14,11 @@ public:
 private:
     void makeChange(const unsigned int x, const unsigned int y, const char symbol);
     char board[3][3];
+    char personChar;
+    char computerChar;
     PersonGamer personGamer;
     ComputerGamer computerGamer;
-    bool isPersonGamerTurn = false;
+    bool isPersonGamerTurn = rand() % 2;
     bool hasMovesLeft();
     bool checkWin();
 };

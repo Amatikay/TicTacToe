@@ -23,7 +23,7 @@ std::pair<unsigned int, unsigned int> ComputerGamer::calculateNextStep(char boar
     for (unsigned int i = 0; i < 3; ++i) {
         for (unsigned int j = 0; j < 3; ++j) {
             if ('_' == board[i][j]) {
-                board[i][j] = 'X';//TODO: допустим алкгоритм играет крестиками.
+                board[i][j] = this->symbol;
                 int currentUtilityFunction = calculateUtilityFunction(board);
                 if (currentUtilityFunction > highestUtilityFunction) {
                     highestUtilityFunction = currentUtilityFunction;
@@ -46,7 +46,7 @@ int ComputerGamer::calculateUtilityFunction(char board[3][3]) {
     for (unsigned int i = 0; i < 3; ++i) {
         for(unsigned int j = 0; j < 3; ++j){
             if ('_' == board[i][j]) {
-                board[i][j] = 'X';//TODO: допустим алгоритм играет крестиками.
+                board[i][j] = this->symbol;
                 int currentScore = calculateUtilityFunction(board);
                 if (currentScore > bestScore) {
                     bestScore = currentScore;
@@ -58,7 +58,7 @@ int ComputerGamer::calculateUtilityFunction(char board[3][3]) {
     return bestScore;
 }
 
-int ComputerGamer::checkWin(const char board[3][3]) {//TODO: Вот тут вообще не SOLID
+int ComputerGamer::checkWin(const char board[3][3]) {//TODO: Вот тут вообще не SOLID.
     //Проверяю X
         // Проверка строк на наличие победы
         for (int i = 0; i < 3; i++)

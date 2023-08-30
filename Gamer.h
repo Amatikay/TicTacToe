@@ -11,15 +11,19 @@
 class Gamer {
     public:
     Gamer(){};
+protected:
+    char symbol;
 };
 class PersonGamer: public Gamer {
     public:
     PersonGamer(){};
+    PersonGamer(const char& symbol){this->symbol = symbol;};
     std::pair<unsigned int, unsigned int> inputNextStep(std::istream& input);
 };
 class ComputerGamer: public Gamer {
     public:
     ComputerGamer(){};
+    ComputerGamer(const char& symbol){this->symbol = symbol;};
     std::pair<unsigned int, unsigned int> calculateNextStep( char board[3][3]);
 private:
     int calculateUtilityFunction( char board[3][3]);
