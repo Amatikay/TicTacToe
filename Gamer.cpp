@@ -13,10 +13,6 @@ std::pair<unsigned int, unsigned int> PersonGamer::inputNextStep(std::istream& i
     return std::make_pair(x, y);
 }
 
-
-
-
-
 std::pair<unsigned int, unsigned int> ComputerGamer::calculateNextStep(char board[3][3]) {
     std::pair<unsigned int, unsigned int> bestNextStep;
     int highestUtilityFunction = -INFINITY;
@@ -37,7 +33,7 @@ std::pair<unsigned int, unsigned int> ComputerGamer::calculateNextStep(char boar
 }
 
 int ComputerGamer::calculateUtilityFunction(char board[3][3]) {
-    int result = checkWin(board); // Проверьте, есть ли победа. Если победа есть возврите значение.
+    int result = checkWin(board);
     if (result != 0) {
         return result;
     }

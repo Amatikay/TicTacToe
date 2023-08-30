@@ -11,18 +11,25 @@
 class Gamer {
     public:
     Gamer(){};
+    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream& input,char board[3][3]) = 0;
 protected:
     char symbol;
 };
 class PersonGamer: public Gamer {
     public:
     PersonGamer(){};
+    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream& input, char board[3][3]) override {
+        return inputNextStep(input);
+    }
     PersonGamer(const char& symbol){this->symbol = symbol;};
     std::pair<unsigned int, unsigned int> inputNextStep(std::istream& input);
 };
 class ComputerGamer: public Gamer {
     public:
     ComputerGamer(){};
+    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream&, char board[3][3]) override {// просто игнорировать входной поток. исправил принци нарушения инверсии зависимости.
+        return calculateNextStep(board);
+    }
     ComputerGamer(const char& symbol){this->symbol = symbol;};
     std::pair<unsigned int, unsigned int> calculateNextStep( char board[3][3]);
 private:

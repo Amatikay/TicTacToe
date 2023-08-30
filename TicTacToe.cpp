@@ -28,8 +28,8 @@ TicTacToe::TicTacToe() {
         personChar = 'X';
         computerChar = '0';
     }
-    personGamer = PersonGamer(personChar);
-    computerGamer = ComputerGamer(computerChar);
+    personGamer = new PersonGamer(personChar);
+    computerGamer = new ComputerGamer(computerChar);
 }
 
 void TicTacToe::printBoard() {
@@ -49,11 +49,11 @@ void TicTacToe::play() {
     while (!checkWin() && hasMovesLeft() ){
          std::pair<unsigned int, unsigned int> nextStep;
         if (isPersonGamerTurn == true){
-            nextStep = personGamer.inputNextStep(std::cin);
+            nextStep = personGamer->makeMove(std::cin,board);
             makeChange(nextStep.first, nextStep.second, personChar);
         }
         if(isPersonGamerTurn == false){
-            nextStep = computerGamer.calculateNextStep(board);
+            nextStep = computerGamer->makeMove(std::cin,board);// просто игнорировать входной поток. исправил принци нарушения инверсии зависимости.
             makeChange(nextStep.first, nextStep.second, computerChar);
         }
         isPersonGamerTurn = !isPersonGamerTurn;

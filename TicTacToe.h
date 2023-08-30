@@ -16,8 +16,8 @@ private:
     char board[3][3];
     char personChar;
     char computerChar;
-    PersonGamer personGamer;
-    ComputerGamer computerGamer;
+    Gamer *personGamer;
+    Gamer *computerGamer;
     bool isPersonGamerTurn = rand() % 2;
     bool hasMovesLeft();
     bool checkWin();
