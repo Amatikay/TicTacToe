@@ -1,0 +1,12 @@
+\doxysection{Gamer.\+h File Reference}
+\hypertarget{Gamer_8h}{}\label{Gamer_8h}\index{Gamer.h@{Gamer.h}}
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGamer}{Gamer}}
+\begin{DoxyCompactList}\small\item\em Абстрактный класс игрока. Класс игрока содержит виртуальный метод make\+Move, который должен быть переопределен в наследниках. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPersonGamer}{Person\+Gamer}}
+\begin{DoxyCompactList}\small\item\em Класс игрока человека. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}
+\begin{DoxyCompactList}\small\item\em Класс игрока компьютера. Класс анализирует игорвое поле исовершает ход. Для хода используется метод из теории игр -\/ минимакс. Метод предполагает, что противник будет играть оптимально. На основе этого алкгоритм соверашет выбор о своем ходе. Алгоритм силен в нападении, но слаб если совершать "{}глупые"{} ходы. \end{DoxyCompactList}\end{DoxyCompactItemize}

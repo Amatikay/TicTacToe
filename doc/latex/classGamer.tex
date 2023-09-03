@@ -1,0 +1,82 @@
+\doxysection{Gamer Class Reference}
+\hypertarget{classGamer}{}\label{classGamer}\index{Gamer@{Gamer}}
+
+
+Абстрактный класс игрока. Класс игрока содержит виртуальный метод make\+Move, который должен быть переопределен в наследниках.  
+
+
+
+
+{\ttfamily \#include $<$Gamer.\+h$>$}
+
+Inheritance diagram for Gamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGamer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGamer_a3fff09c7c6395562a37a3c8d12cabd1b}{Gamer}} ()
+\item 
+virtual std\+::pair$<$ unsigned int, unsigned int $>$ \mbox{\hyperlink{classGamer_ab775e29c6a8b4958a5a491941fd0e42d}{make\+Move}} (std\+::istream \&\mbox{\hyperlink{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}{input}}, char board\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})=0
+\begin{DoxyCompactList}\small\item\em Метод для совершения хода. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Абстрактный класс игрока. Класс игрока содержит виртуальный метод make\+Move, который должен быть переопределен в наследниках. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGamer_a3fff09c7c6395562a37a3c8d12cabd1b}\label{classGamer_a3fff09c7c6395562a37a3c8d12cabd1b} 
+\index{Gamer@{Gamer}!Gamer@{Gamer}}
+\index{Gamer@{Gamer}!Gamer@{Gamer}}
+\doxysubsubsection{\texorpdfstring{Gamer()}{Gamer()}}
+{\footnotesize\ttfamily Gamer\+::\+Gamer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGamer_ab775e29c6a8b4958a5a491941fd0e42d}\label{classGamer_ab775e29c6a8b4958a5a491941fd0e42d} 
+\index{Gamer@{Gamer}!makeMove@{makeMove}}
+\index{makeMove@{makeMove}!Gamer@{Gamer}}
+\doxysubsubsection{\texorpdfstring{makeMove()}{makeMove()}}
+{\footnotesize\ttfamily virtual std\+::pair$<$ unsigned int, unsigned int $>$ Gamer\+::make\+Move (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input,  }\item[{char}]{board\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Метод для совершения хода. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::istream\&} & input -\/ ссылка на входной поток, из которого будут взяты координаты след хода. \\
+\hline
+{\em char} & board\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} -\/ игровое поле в текущее время. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$unsigned int, unsigned int$>$ -\/ пара координат следующего хода. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classComputerGamer_a3c6e9327ec4b5b021a805fbc86578e3e}{Computer\+Gamer}}, and \mbox{\hyperlink{classPersonGamer_a1c2c14bdf9ec5d6e5acc2943c91c33b7}{Person\+Gamer}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGamer_aed833afa332b573ec2b644b17dfbb608}\label{classGamer_aed833afa332b573ec2b644b17dfbb608} 
+\index{Gamer@{Gamer}!symbol@{symbol}}
+\index{symbol@{symbol}!Gamer@{Gamer}}
+\doxysubsubsection{\texorpdfstring{symbol}{symbol}}
+{\footnotesize\ttfamily char Gamer\+::symbol\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Gamer_8h}{Gamer.\+h}}\end{DoxyCompactItemize}

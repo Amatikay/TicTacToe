@@ -1,0 +1,97 @@
+\doxysection{Person\+Gamer Class Reference}
+\hypertarget{classPersonGamer}{}\label{classPersonGamer}\index{PersonGamer@{PersonGamer}}
+
+
+Класс игрока человека.  
+
+
+
+
+{\ttfamily \#include $<$Gamer.\+h$>$}
+
+Inheritance diagram for Person\+Gamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPersonGamer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPersonGamer_ae4989476fba0bd6fc2f989db055d7630}{Person\+Gamer}} ()
+\item 
+virtual std\+::pair$<$ unsigned int, unsigned int $>$ \mbox{\hyperlink{classPersonGamer_a1c2c14bdf9ec5d6e5acc2943c91c33b7}{make\+Move}} (std\+::istream \&\mbox{\hyperlink{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}{input}}, char board\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}=nullptr) override
+\begin{DoxyCompactList}\small\item\em Метод для совершения хода. Переопределенный метод из абстрактного класса. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPersonGamer_a2124783eaa878c650337255b4ce36731}{Person\+Gamer}} (const char \&\mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}})
+\begin{DoxyCompactList}\small\item\em Конструктор класса c параметром символа игрока \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGamer}{Gamer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGamer_a3fff09c7c6395562a37a3c8d12cabd1b}{Gamer}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGamer}{Gamer}}}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс игрока человека. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPersonGamer_ae4989476fba0bd6fc2f989db055d7630}\label{classPersonGamer_ae4989476fba0bd6fc2f989db055d7630} 
+\index{PersonGamer@{PersonGamer}!PersonGamer@{PersonGamer}}
+\index{PersonGamer@{PersonGamer}!PersonGamer@{PersonGamer}}
+\doxysubsubsection{\texorpdfstring{PersonGamer()}{PersonGamer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Person\+Gamer\+::\+Person\+Gamer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classPersonGamer_a2124783eaa878c650337255b4ce36731}\label{classPersonGamer_a2124783eaa878c650337255b4ce36731} 
+\index{PersonGamer@{PersonGamer}!PersonGamer@{PersonGamer}}
+\index{PersonGamer@{PersonGamer}!PersonGamer@{PersonGamer}}
+\doxysubsubsection{\texorpdfstring{PersonGamer()}{PersonGamer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Person\+Gamer\+::\+Person\+Gamer (\begin{DoxyParamCaption}\item[{const char \&}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор класса c параметром символа игрока 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & -\/ символ игрока (X или O) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPersonGamer_a1c2c14bdf9ec5d6e5acc2943c91c33b7}\label{classPersonGamer_a1c2c14bdf9ec5d6e5acc2943c91c33b7} 
+\index{PersonGamer@{PersonGamer}!makeMove@{makeMove}}
+\index{makeMove@{makeMove}!PersonGamer@{PersonGamer}}
+\doxysubsubsection{\texorpdfstring{makeMove()}{makeMove()}}
+{\footnotesize\ttfamily virtual std\+::pair$<$ unsigned int, unsigned int $>$ Person\+Gamer\+::make\+Move (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input,  }\item[{char}]{board\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Метод для совершения хода. Переопределенный метод из абстрактного класса. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & поток ввода. Откуда будут взяты координаты следующего хода. \\
+\hline
+{\em board} & текущее состояние игрового поля. Не нужно. Вставть хоть что. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair$<$unsigned int, unsigned int$>$ -\/ пара координат следующего хода. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGamer_ab775e29c6a8b4958a5a491941fd0e42d}{Gamer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Gamer_8h}{Gamer.\+h}}\item 
+\mbox{\hyperlink{Gamer_8cpp}{Gamer.\+cpp}}\end{DoxyCompactItemize}

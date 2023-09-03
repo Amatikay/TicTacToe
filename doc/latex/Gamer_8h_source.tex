@@ -1,0 +1,47 @@
+\doxysection{Gamer.\+h}
+\hypertarget{Gamer_8h_source}{}\label{Gamer_8h_source}\mbox{\hyperlink{Gamer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ sergey\ on\ 31.08.23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TIC\_TAC\_TOE\_GAMER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TIC\_TAC\_TOE\_GAMER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGamer}{Gamer}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classGamer_a3fff09c7c6395562a37a3c8d12cabd1b}{Gamer}}()\{\};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ std::pair<unsigned\ int,\ unsigned\ int>\ \mbox{\hyperlink{classGamer_ab775e29c6a8b4958a5a491941fd0e42d}{makeMove}}(std::istream\&\ \mbox{\hyperlink{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}{input}},\textcolor{keywordtype}{char}\ board[3][3])\ =\ 0;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPersonGamer}{PersonGamer}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGamer}{Gamer}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classPersonGamer_ae4989476fba0bd6fc2f989db055d7630}{PersonGamer}}()\{\};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ std::pair<unsigned\ int,\ unsigned\ int>\ \mbox{\hyperlink{classPersonGamer_a1c2c14bdf9ec5d6e5acc2943c91c33b7}{makeMove}}(std::istream\&\ \mbox{\hyperlink{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}{input}},\ \textcolor{keywordtype}{char}\ board[3][3]\ =\ \textcolor{keyword}{nullptr})\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inputNextStep(\mbox{\hyperlink{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}{input}});}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classPersonGamer_a2124783eaa878c650337255b4ce36731}{PersonGamer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\&\ \mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}})\{this-\/>symbol\ =\ \mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}};\};}
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ std::pair<unsigned\ int,\ unsigned\ int>\ inputNextStep(std::istream\&\ \mbox{\hyperlink{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}{input}});}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComputerGamer}{ComputerGamer}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGamer}{Gamer}}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classComputerGamer_ad37d5913c8a73019d431e23d97cc088c}{ComputerGamer}}()\{\};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ std::pair<unsigned\ int,\ unsigned\ int>\ \mbox{\hyperlink{classComputerGamer_a3c6e9327ec4b5b021a805fbc86578e3e}{makeMove}}(std::istream\&,\ \textcolor{keywordtype}{char}\ board[3][3])\textcolor{keyword}{\ override\ }\{\textcolor{comment}{//\ просто\ игнорировать\ входной\ поток.\ исправил\ принци\ нарушения\ инверсии\ зависимости.}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ calculateNextStep(board);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classComputerGamer_a3441b68f3e1d199709a885f6de78b244}{ComputerGamer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\&\ \mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}})\{this-\/>symbol\ =\ \mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}};\};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00080\ \ \ \ \ std::pair<unsigned\ int,\ unsigned\ int>\ calculateNextStep(\ \textcolor{keywordtype}{char}\ board[3][3]);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ calculateUtilityFunction(\ \textcolor{keywordtype}{char}\ board[3][3]);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ checkWin(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ board[3][3]);}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TIC\_TAC\_TOE\_GAMER\_H}}
+
+\end{DoxyCode}

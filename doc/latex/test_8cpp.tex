@@ -1,0 +1,136 @@
+\doxysection{test.\+cpp File Reference}
+\hypertarget{test_8cpp}{}\label{test_8cpp}\index{test.cpp@{test.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Tic\+Tac\+Toe.\+h"{}}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{test_8cpp_ad4b8fca70d6c4941bb7b70f893e9c8e2}{TEST}} (\mbox{\hyperlink{classTicTacToe}{Tic\+Tac\+Toe}}, not\+Equal\+\_\+\+Null\+Ptr\+\_\+\+New\+Tic\+Tac\+Toe)
+\item 
+\mbox{\hyperlink{test_8cpp_ad36b3a90d4b40d32e30dd8ff2e4aefa7}{TEST}} (\mbox{\hyperlink{classPersonGamer}{Person\+Gamer}}, not\+Equal\+\_\+\+Null\+Ptr\+\_\+\+New\+Person\+Gamer)
+\item 
+\mbox{\hyperlink{test_8cpp_a2ba9563c64c3c1eb29f26b4354637bde}{TEST}} (\mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}, not\+Equal\+\_\+\+Null\+Ptr\+\_\+\+New\+Computer\+Gamer)
+\item 
+std\+::ofstream \mbox{\hyperlink{test_8cpp_ab5dc606627fcd139e9c9ccee37c1fcbb}{file}} ("{}../test.\+txt"{})
+\item 
+\mbox{\hyperlink{test_8cpp_a27ff3355da738384c26004abb6773a7d}{if}} (file.\+is\+\_\+open())
+\item 
+\mbox{\hyperlink{test_8cpp_ab5dc606627fcd139e9c9ccee37c1fcbb}{file}} \mbox{\hyperlink{test_8cpp_a37ad70d7abed75efc21ed0a49b6bc945}{close}} ()
+\item 
+std\+::ifstream \mbox{\hyperlink{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}{input}} ("{}../test.\+txt"{})
+\item 
+\mbox{\hyperlink{test_8cpp_aea083e2939447aa1a441b07b22a07959}{if}} (input.\+is\+\_\+open())
+\item 
+\mbox{\hyperlink{test_8cpp_a63cbdaa848473ac0b91edbe0c147883f}{TEST}} (\mbox{\hyperlink{classPersonGamer}{Person\+Gamer}}, make\+Move\+\_\+\+Is\+\_\+\+Correct\+\_\+from\+\_\+terminal\+\_\+input)
+\item 
+\mbox{\hyperlink{test_8cpp_a199c43408a5300c7fdb027f3909aa17a}{TEST}} (\mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}, make\+Move\+\_\+\+Empty\+Board)
+\item 
+\mbox{\hyperlink{test_8cpp_a3bd78c6957ad926f18a5b1dd275bdc8b}{TEST}} (\mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}, make\+Move\+\_\+only\+One\+Step)
+\item 
+\mbox{\hyperlink{test_8cpp_ab2690233a8c7e3f89233d6f1b9914ead}{TEST}} (\mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}, make\+Move\+\_\+only\+One\+Step2)
+\item 
+int \mbox{\hyperlink{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{test_8cpp_a0544c3fe466e421738dae463968b70ba}{else}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test_8cpp_a37ad70d7abed75efc21ed0a49b6bc945}\label{test_8cpp_a37ad70d7abed75efc21ed0a49b6bc945} 
+\index{test.cpp@{test.cpp}!close@{close}}
+\index{close@{close}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}{input}} close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_ab5dc606627fcd139e9c9ccee37c1fcbb}\label{test_8cpp_ab5dc606627fcd139e9c9ccee37c1fcbb} 
+\index{test.cpp@{test.cpp}!file@{file}}
+\index{file@{file}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily std\+::ofstream file (\begin{DoxyParamCaption}\item[{"{}../test.\+txt"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_a27ff3355da738384c26004abb6773a7d}\label{test_8cpp_a27ff3355da738384c26004abb6773a7d} 
+\index{test.cpp@{test.cpp}!if@{if}}
+\index{if@{if}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{file.}]{is\+\_\+open() }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_aea083e2939447aa1a441b07b22a07959}\label{test_8cpp_aea083e2939447aa1a441b07b22a07959} 
+\index{test.cpp@{test.cpp}!if@{if}}
+\index{if@{if}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{input.}]{is\+\_\+open() }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587}\label{test_8cpp_a99d2bbc05b2269db321de3d7d49a1587} 
+\index{test.cpp@{test.cpp}!input@{input}}
+\index{input@{input}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{input()}{input()}}
+{\footnotesize\ttfamily std\+::ifstream input (\begin{DoxyParamCaption}\item[{"{}../test.\+txt"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{test.cpp@{test.cpp}!main@{main}}
+\index{main@{main}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_a199c43408a5300c7fdb027f3909aa17a}\label{test_8cpp_a199c43408a5300c7fdb027f3909aa17a} 
+\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}}]{,  }\item[{make\+Move\+\_\+\+Empty\+Board}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_a3bd78c6957ad926f18a5b1dd275bdc8b}\label{test_8cpp_a3bd78c6957ad926f18a5b1dd275bdc8b} 
+\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}}]{,  }\item[{make\+Move\+\_\+only\+One\+Step}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_ab2690233a8c7e3f89233d6f1b9914ead}\label{test_8cpp_ab2690233a8c7e3f89233d6f1b9914ead} 
+\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}}]{,  }\item[{make\+Move\+\_\+only\+One\+Step2}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_a2ba9563c64c3c1eb29f26b4354637bde}\label{test_8cpp_a2ba9563c64c3c1eb29f26b4354637bde} 
+\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComputerGamer}{Computer\+Gamer}}}]{,  }\item[{not\+Equal\+\_\+\+Null\+Ptr\+\_\+\+New\+Computer\+Gamer}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_a63cbdaa848473ac0b91edbe0c147883f}\label{test_8cpp_a63cbdaa848473ac0b91edbe0c147883f} 
+\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPersonGamer}{Person\+Gamer}}}]{,  }\item[{make\+Move\+\_\+\+Is\+\_\+\+Correct\+\_\+from\+\_\+terminal\+\_\+input}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_ad36b3a90d4b40d32e30dd8ff2e4aefa7}\label{test_8cpp_ad36b3a90d4b40d32e30dd8ff2e4aefa7} 
+\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPersonGamer}{Person\+Gamer}}}]{,  }\item[{not\+Equal\+\_\+\+Null\+Ptr\+\_\+\+New\+Person\+Gamer}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test_8cpp_ad4b8fca70d6c4941bb7b70f893e9c8e2}\label{test_8cpp_ad4b8fca70d6c4941bb7b70f893e9c8e2} 
+\index{test.cpp@{test.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily TEST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTicTacToe}{Tic\+Tac\+Toe}}}]{,  }\item[{not\+Equal\+\_\+\+Null\+Ptr\+\_\+\+New\+Tic\+Tac\+Toe}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{test_8cpp_a0544c3fe466e421738dae463968b70ba}\label{test_8cpp_a0544c3fe466e421738dae463968b70ba} 
+\index{test.cpp@{test.cpp}!else@{else}}
+\index{else@{else}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Файл\ не\ был\ открыт!"{}}\ <<\ std::endl}
+
+\end{DoxyCode}

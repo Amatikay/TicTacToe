@@ -1,0 +1,95 @@
+\doxysection{Computer\+Gamer Class Reference}
+\hypertarget{classComputerGamer}{}\label{classComputerGamer}\index{ComputerGamer@{ComputerGamer}}
+
+
+Класс игрока компьютера. Класс анализирует игорвое поле исовершает ход. Для хода используется метод из теории игр -\/ минимакс. Метод предполагает, что противник будет играть оптимально. На основе этого алкгоритм соверашет выбор о своем ходе. Алгоритм силен в нападении, но слаб если совершать "{}глупые"{} ходы.  
+
+
+
+
+{\ttfamily \#include $<$Gamer.\+h$>$}
+
+Inheritance diagram for Computer\+Gamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classComputerGamer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classComputerGamer_ad37d5913c8a73019d431e23d97cc088c}{Computer\+Gamer}} ()
+\item 
+virtual std\+::pair$<$ unsigned int, unsigned int $>$ \mbox{\hyperlink{classComputerGamer_a3c6e9327ec4b5b021a805fbc86578e3e}{make\+Move}} (std\+::istream \&, char board\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}) override
+\begin{DoxyCompactList}\small\item\em Метод для совершения хода. Переопределенный метод из абстрактного класса. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComputerGamer_a3441b68f3e1d199709a885f6de78b244}{Computer\+Gamer}} (const char \&\mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}})
+\begin{DoxyCompactList}\small\item\em Конструктор класса c параметром символа игрока \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGamer}{Gamer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGamer_a3fff09c7c6395562a37a3c8d12cabd1b}{Gamer}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGamer}{Gamer}}}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{classGamer_aed833afa332b573ec2b644b17dfbb608}{symbol}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс игрока компьютера. Класс анализирует игорвое поле исовершает ход. Для хода используется метод из теории игр -\/ минимакс. Метод предполагает, что противник будет играть оптимально. На основе этого алкгоритм соверашет выбор о своем ходе. Алгоритм силен в нападении, но слаб если совершать "{}глупые"{} ходы. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classComputerGamer_ad37d5913c8a73019d431e23d97cc088c}\label{classComputerGamer_ad37d5913c8a73019d431e23d97cc088c} 
+\index{ComputerGamer@{ComputerGamer}!ComputerGamer@{ComputerGamer}}
+\index{ComputerGamer@{ComputerGamer}!ComputerGamer@{ComputerGamer}}
+\doxysubsubsection{\texorpdfstring{ComputerGamer()}{ComputerGamer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Computer\+Gamer\+::\+Computer\+Gamer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classComputerGamer_a3441b68f3e1d199709a885f6de78b244}\label{classComputerGamer_a3441b68f3e1d199709a885f6de78b244} 
+\index{ComputerGamer@{ComputerGamer}!ComputerGamer@{ComputerGamer}}
+\index{ComputerGamer@{ComputerGamer}!ComputerGamer@{ComputerGamer}}
+\doxysubsubsection{\texorpdfstring{ComputerGamer()}{ComputerGamer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Computer\+Gamer\+::\+Computer\+Gamer (\begin{DoxyParamCaption}\item[{const char \&}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор класса c параметром символа игрока 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & -\/ символ игрока (X или O) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classComputerGamer_a3c6e9327ec4b5b021a805fbc86578e3e}\label{classComputerGamer_a3c6e9327ec4b5b021a805fbc86578e3e} 
+\index{ComputerGamer@{ComputerGamer}!makeMove@{makeMove}}
+\index{makeMove@{makeMove}!ComputerGamer@{ComputerGamer}}
+\doxysubsubsection{\texorpdfstring{makeMove()}{makeMove()}}
+{\footnotesize\ttfamily virtual std\+::pair$<$ unsigned int, unsigned int $>$ Computer\+Gamer\+::make\+Move (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{,  }\item[{char}]{board\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Метод для совершения хода. Переопределенный метод из абстрактного класса. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & состояние игрового поля. нужно для приняти решения о следующем ходе. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает пару -\/ координаты следующего хода. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGamer_ab775e29c6a8b4958a5a491941fd0e42d}{Gamer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Gamer_8h}{Gamer.\+h}}\item 
+\mbox{\hyperlink{Gamer_8cpp}{Gamer.\+cpp}}\end{DoxyCompactItemize}

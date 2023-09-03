@@ -1,0 +1,43 @@
+\doxysection{Tic\+Tac\+Toe.\+h}
+\hypertarget{TicTacToe_8h_source}{}\label{TicTacToe_8h_source}\mbox{\hyperlink{TicTacToe_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ sergey\ on\ 30.08.23.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TIC\_TAC\_TOE\_TICTACTOE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TIC\_TAC\_TOE\_TICTACTOE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Gamer_8h}{Gamer.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTicTacToe}{TicTacToe}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classTicTacToe}{TicTacToe}}*\ \mbox{\hyperlink{classTicTacToe_af197b9b124d2c0b468ae36537bb7803a}{getInstance}}()\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (instance\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ instance\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTicTacToe}{TicTacToe}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTicTacToe_a39fa68ce3e5d73c4aab70a0722b29cf5}{printBoard}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTicTacToe_a8f3eab0a5e1c1f05b888a6299dcb08bd}{play}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classTicTacToe}{TicTacToe}}*\ instance;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classTicTacToe}{TicTacToe}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ makeChange(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{char}\ board[3][3];}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{char}\ personChar;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{char}\ computerChar;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classGamer}{Gamer}}\ *personGamer;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classGamer}{Gamer}}\ *computerGamer;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPersonGamerTurn\ =\ rand()\ \%\ 2;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasMovesLeft();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkWin();}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classTicTacToe}{\string~TicTacToe}}();}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TIC\_TAC\_TOE\_TICTACTOE\_H}}
+
+\end{DoxyCode}
