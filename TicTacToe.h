@@ -16,13 +16,23 @@
  */
 class TicTacToe {
 public:
+    /**
+     * @brief Статический метод для получения единственного экземпляра класса.
+     * @return Единственный экземпляр класса.
+     */
     static TicTacToe* getInstance() {
         if (instance == nullptr) {
             instance = new TicTacToe();
         }
         return instance;
     }
+    /**
+     * @brief Метод для вывода состояния игрового поля на экран.
+     */
     void printBoard();
+    /**
+     * @brief Метод для запуска игры.
+     */
     void play();
 
 private:

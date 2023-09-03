@@ -51,7 +51,7 @@ void TicTacToe::play() {
     while (!checkWin() && hasMovesLeft() ){
          std::pair<unsigned int, unsigned int> nextStep;
         if (isPersonGamerTurn == true){
-            nextStep = personGamer->makeMove(std::cin,board);
+            nextStep = personGamer->makeMove(std::cin, nullptr);
             makeChange(nextStep.first, nextStep.second, personChar);
         }
         if(isPersonGamerTurn == false){
