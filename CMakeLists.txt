@@ -8,3 +8,11 @@ add_executable(tic_tac_toe main.cpp
         TicTacToe.h
         Gamer.cpp
         Gamer.h)
+
+add_executable(runTests test.cpp
+        TicTacToe.cpp
+        TicTacToe.h
+        Gamer.cpp
+        Gamer.h)
+
+target_link_libraries(runTests gtest gtest_main)
