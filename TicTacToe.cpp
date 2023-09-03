@@ -6,6 +6,8 @@
 #include <fstream>
 #include "TicTacToe.h"
 
+TicTacToe* TicTacToe::instance= nullptr;
+
 void TicTacToe::makeChange(const unsigned int x, const unsigned int y, const char symbol) {
     if ('_' == board[x][y])    {
         board[x][y] = symbol;
@@ -97,4 +99,5 @@ TicTacToe::~TicTacToe() {
     std::cout << "The Game is end. Thank you for game!"<<std::endl;
     delete personGamer;
     delete computerGamer;
+    delete instance;
 }

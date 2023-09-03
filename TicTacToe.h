@@ -6,13 +6,28 @@
 #define TIC_TAC_TOE_TICTACTOE_H
 
 #include "Gamer.h"
+
+
+/**
+ * @brief Класс игры в крестики нолики.
+ * Класс написан в соотвествии с паттерном одиночка, так как в процессе игры должен существовать только один экземпляр класса.
+ * С созданием экземпляра класса начинается игра.
+ * При уничтожении экземпляра игра заканчивается.
+ */
 class TicTacToe {
 public:
-    TicTacToe();
+    static TicTacToe* getInstance() {
+        if (instance == nullptr) {
+            instance = new TicTacToe();
+        }
+        return instance;
+    }
     void printBoard();
     void play();
-    ~TicTacToe();
+
 private:
+    static TicTacToe* instance;
+    TicTacToe();
     void makeChange(const unsigned int x, const unsigned int y, const char symbol);
     char board[3][3];
     char personChar;
@@ -22,6 +37,7 @@ private:
     bool isPersonGamerTurn = rand() % 2;
     bool hasMovesLeft();
     bool checkWin();
+    ~TicTacToe();
 };
 
 
