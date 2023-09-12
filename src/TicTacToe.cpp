@@ -8,8 +8,6 @@
 
 TicTacToe* TicTacToe::instance= nullptr;
 
-//TODO:  Почему то компьютер ходит тем же символом, что и игрок
-
 void TicTacToe::makeChange(const unsigned int x, const unsigned int y, const char symbol) {
     if ('_' == board[x][y])    {
         board.makeMove(x,y,symbol);
@@ -57,7 +55,7 @@ void TicTacToe::play() {
         }
         if(!isPersonGamerTurn){
             nextStep = computerGamer->makeMove(std::cin,board);// просто игнорировать входной поток. исправил принци нарушения инверсии зависимости.
-            makeChange(nextStep.first, nextStep.second, personGamer->getSymbol());
+            makeChange(nextStep.first, nextStep.second, computerGamer->getSymbol());
         }
         isPersonGamerTurn = !isPersonGamerTurn;
         ui->printBoard(board,personGamer->getSymbol(), computerGamer->getSymbol());
