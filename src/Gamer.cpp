@@ -13,7 +13,7 @@ std::pair<unsigned int, unsigned int> PersonGamer::inputNextStep(std::istream& i
     return std::make_pair(x, y);
 }
 
-std::pair<unsigned int, unsigned int> ComputerGamer::calculateNextStep(char board[3][3]) {
+std::pair<unsigned int, unsigned int> ComputerGamer::calculateNextStep(Board board) {
     std::pair<unsigned int, unsigned int> bestNextStep;
     int highestUtilityFunction = -INFINITY;
     for (unsigned int i = 0; i < 3; ++i) {
@@ -32,7 +32,7 @@ std::pair<unsigned int, unsigned int> ComputerGamer::calculateNextStep(char boar
     return bestNextStep;
 }
 
-int ComputerGamer::calculateUtilityFunction(char board[3][3]) {
+int ComputerGamer::calculateUtilityFunction(Board board) {
     int result = checkWin(board);
     if (result != 0) {
         return result;
@@ -54,7 +54,7 @@ int ComputerGamer::calculateUtilityFunction(char board[3][3]) {
     return bestScore;
 }
 
-int ComputerGamer::checkWin(const char board[3][3]) {//TODO: Вот тут вообще не SOLID.
+int ComputerGamer::checkWin(Board board) {//TODO: Вот тут вообще не SOLID.
     //Проверяю X
         // Проверка строк на наличие победы
         for (int i = 0; i < 3; i++)

@@ -8,69 +8,71 @@
 
 TicTacToe* TicTacToe::instance= nullptr;
 
+//TODO:  Почему то компьютер ходит тем же символом, что и игрок
+
 void TicTacToe::makeChange(const unsigned int x, const unsigned int y, const char symbol) {
     if ('_' == board[x][y])    {
-        board[x][y] = symbol;
+        board.makeMove(x,y,symbol);
     }
 }
 TicTacToe::TicTacToe() {
-    for (auto & i : board) {
-        for (char & j : i) {
-            j = '_';
-        }
-    }
     srand(time(0));
-
     bool randNumber = rand() % 2;
     if (randNumber){
-        personChar = '0';
-        computerChar = 'X';
+        personGamer = new PersonGamer('0');
+        computerGamer = new ComputerGamer('X');
     }
     else{
-        personChar = 'X';
-        computerChar = '0';
-    }
-    personGamer = new PersonGamer(personChar);
-    computerGamer = new ComputerGamer(computerChar);
-}
+        personGamer = new PersonGamer('X');
+        computerGamer = new ComputerGamer('0');
 
-void TicTacToe::printBoard() {
-    std::cout << "\033c";//Очистка терминала.
-    std::cout<<"User char is " << this->personChar << " Computer char is " << this->computerChar << std::endl;
-    for (auto & i : board) {
-        for (char j : i) {
-            std::cout << j << " ";
-        }
-        std::cout << std::endl;
     }
 
+    std::cout<<"Choose type of UI: 0 - terminal, 1 - colorful terminal, 2 - GUI"<<std::endl;
+    unsigned int typeOfUI;
+    std::cin>>typeOfUI;
+    switch (typeOfUI) {
+        case 0:
+            this->ui = new TerminalUI();
+            break;
+            //TODO прописать интерфейсы для остальных типов UI
+//        case 1:
+//            this->ui = new ColorfulTerminalUI();
+//            break;
+//        case 2:
+//            this->ui = new GUI();
+//            break;
+
+    }
 }
 
 void TicTacToe::play() {
-    this->printBoard();
+    ui->printBoard(board, personGamer->getSymbol(), computerGamer->getSymbol());
+    std::pair<unsigned int, unsigned int> nextStep;
     while (!checkWin() && hasMovesLeft() ){
-         std::pair<unsigned int, unsigned int> nextStep;
-        if (isPersonGamerTurn == true){
-            nextStep = personGamer->makeMove(std::cin, nullptr);
-            makeChange(nextStep.first, nextStep.second, personChar);
+
+        if (isPersonGamerTurn){
+            nextStep = personGamer->makeMove(std::cin, board);
+            makeChange(nextStep.first, nextStep.second, personGamer->getSymbol());
         }
-        if(isPersonGamerTurn == false){
+        if(!isPersonGamerTurn){
             nextStep = computerGamer->makeMove(std::cin,board);// просто игнорировать входной поток. исправил принци нарушения инверсии зависимости.
-            makeChange(nextStep.first, nextStep.second, computerChar);
+            makeChange(nextStep.first, nextStep.second, personGamer->getSymbol());
         }
         isPersonGamerTurn = !isPersonGamerTurn;
-        this->printBoard();
+        ui->printBoard(board,personGamer->getSymbol(), computerGamer->getSymbol());
     }
 }
 
 bool TicTacToe::hasMovesLeft() {
-    for (auto & i : board) {
-        for (char j : i) {
-            if ('_' == j) {
+    for (size_t i = 0; i < board.getSize(); ++i) {
+        for (size_t j = 0; j < board.getSize(); ++j) {
+            if ('_' == board[i][j]) {
                 return true;
             }
         }
     }
+    return false;
 }
 
 bool TicTacToe::checkWin() {
@@ -100,4 +102,12 @@ TicTacToe::~TicTacToe() {
     delete personGamer;
     delete computerGamer;
     delete instance;
+    delete ui;
+}
+
+TicTacToe *TicTacToe::getInstance(){
+    if (instance == nullptr) {
+        instance = new TicTacToe();
+    }
+    return instance;
 }

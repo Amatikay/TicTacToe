@@ -7,6 +7,8 @@
 
 
 #include <utility>
+#include "Board.h"
+
 /**
  * @brief Абстрактный класс игрока.
  * Класс игрока содержит виртуальный метод makeMove, который должен быть переопределен в наследниках.
@@ -18,10 +20,11 @@ class Gamer {
     /**
      * @brief Метод для совершения хода.
      * @param std::istream& input - ссылка на входной поток, из которого будут взяты координаты след хода.
-     * @param char board[3][3] - игровое поле в текущее время.
+     * @param Board board - игровое поле в текущее время.
      * @return std::pair<unsigned int, unsigned int> - пара координат следующего хода.
      */
-    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream& input,char board[3][3]) = 0;
+    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream& input,Board board) = 0;
+    char getSymbol(){return symbol;};
 protected:
     char symbol;
 };
@@ -39,7 +42,7 @@ class PersonGamer: public Gamer {
      * @param board текущее состояние игрового поля. Не нужно. Вставть хоть что.
      * @return std::pair<unsigned int, unsigned int> - пара координат следующего хода.
      */
-    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream& input, char board[3][3] = nullptr) override {
+    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream& input, Board board) override {
         return inputNextStep(input);
     }
     /**
@@ -67,7 +70,7 @@ class ComputerGamer: public Gamer {
      * @param board состояние игрового поля. нужно для приняти решения о следующем ходе.
      * @return Возвращает пару - координаты следующего хода.
      */
-    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream&, char board[3][3]) override {// просто игнорировать входной поток. исправил принци нарушения инверсии зависимости.
+    virtual std::pair<unsigned int, unsigned int> makeMove(std::istream&, Board board) override {// просто игнорировать входной поток. исправил принци нарушения инверсии зависимости.
         return calculateNextStep(board);
     }
     /**
@@ -77,9 +80,9 @@ class ComputerGamer: public Gamer {
     ComputerGamer(const char& symbol){this->symbol = symbol;};
 
 private:
-    std::pair<unsigned int, unsigned int> calculateNextStep( char board[3][3]);
-    int calculateUtilityFunction( char board[3][3]);
-    int checkWin(const char board[3][3]);
+    std::pair<unsigned int, unsigned int> calculateNextStep( Board board);
+    int calculateUtilityFunction( Board board);
+    int checkWin(Board board);
 };
 
 #endif //TIC_TAC_TOE_GAMER_H

@@ -6,6 +6,8 @@
 #define TIC_TAC_TOE_TICTACTOE_H
 
 #include "Gamer.h"
+#include "UI.h"
+#include "Board.h"
 
 
 /**
@@ -20,16 +22,7 @@ public:
      * @brief Статический метод для получения единственного экземпляра класса.
      * @return Единственный экземпляр класса.
      */
-    static TicTacToe* getInstance() {
-        if (instance == nullptr) {
-            instance = new TicTacToe();
-        }
-        return instance;
-    }
-    /**
-     * @brief Метод для вывода состояния игрового поля на экран.
-     */
-    void printBoard();
+    static TicTacToe* getInstance();
     /**
      * @brief Метод для запуска игры.
      */
@@ -39,14 +32,13 @@ private:
     static TicTacToe* instance;
     TicTacToe();
     void makeChange(const unsigned int x, const unsigned int y, const char symbol);
-    char board[3][3];
-    char personChar;
-    char computerChar;
+    Board board = Board();//TODO:  Singleton?
     Gamer *personGamer;
     Gamer *computerGamer;
     bool isPersonGamerTurn = rand() % 2;
     bool hasMovesLeft();
     bool checkWin();
+    UI *ui;
     ~TicTacToe();
 };
 
