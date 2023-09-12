@@ -25,25 +25,27 @@ TicTacToe::TicTacToe() {
         computerGamer = new ComputerGamer('0');
 
     }
-//TODO Не придумал как прогнать корректно в тестах этот кусок кода. Поэтому закомментировал.
-    this->ui = new TerminalUI();
-//    std::cout<<"Choose type of UI: 0 - terminal, 1 - colorful terminal, 2 - GUI"<<std::endl;
-//    unsigned int typeOfUI;
-//    std::cin>>typeOfUI;
-//    switch (typeOfUI) {
-//        case 0:
-//            this->ui = new TerminalUI();
-//            break;
-            //TODO прописать интерфейсы для остальных типов UI
+
+
+    std::cout<<"Choose type of UI: 0 - terminal, 1 - colorful terminal, 2 - GUI"<<std::endl;
+    unsigned int typeOfUI;
+    std::cin>>typeOfUI;
+    switch (typeOfUI) {
+        case 0:
+            this->ui = new TerminalUI();
+            break;
+//            TODO прописать интерфейсы для остальных типов UI
 //        case 1:
 //            this->ui = new ColorfulTerminalUI();
 //            break;
 //        case 2:
 //            this->ui = new GUI();
 //            break;
-
+        default:
+            this->ui = new TerminalUI();
+            break;
     }
-//}
+}
 
 void TicTacToe::play() {
     ui->printBoard(board, personGamer->getSymbol(), computerGamer->getSymbol());
