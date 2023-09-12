@@ -2,15 +2,15 @@
 // Created by sergey on 03.09.23.
 //
 #include <iostream>
-#include "TicTacToe.h"
+#include "../include/TicTacToe.h"
 #include <gtest/gtest.h>
 #include <fstream>
 
 TEST(TicTacToe, notEqual_NullPtr_NewTicTacToe)
 {
-    std::unique_ptr<TicTacToe> game(new TicTacToe());//использую умный указатель потому, что если взять просто указатель
-                                                        //то в случае не прохожения теста он завершится с ошикой и не будет удален указатель
-    ASSERT_NE( nullptr,game.get());//.get() - метод умного указателя возразающий обычный указатель
+    TicTacToe* game = TicTacToe::getInstance();
+
+    ASSERT_NE( nullptr,game);
 }
 
 TEST(PersonGamer, notEqual_NullPtr_NewPersonGamer)
@@ -29,16 +29,16 @@ TEST(ComputerGamer, notEqual_NullPtr_NewComputerGamer)
 TEST(PersonGamer, makeMove_Is_Correct_from_file)// проверка корректности в случае необходимости перенаправления ввода
 {
     std::unique_ptr<Gamer> personGamer(new PersonGamer());
-    std::ofstream file("../test.txt");
+    std::ofstream file("../test/test.txt");
     if(file.is_open()){
-        file << "2 2";// волшебная константа - абсолютно лобое значение
+        file << "2 2";// волшебная константа - абсолютно лобое значение в файле
     }
     else {
         std::cerr << "Файл не был открыт!" << std::endl;
     }
     file.close();
 
-    std::ifstream input("../test.txt");
+    std::ifstream input("../test/test.txt");
 
     if (input.is_open()) {
         std::pair<unsigned int, unsigned int> nextStep = personGamer->makeMove(input,nullptr);
@@ -46,7 +46,7 @@ TEST(PersonGamer, makeMove_Is_Correct_from_file)// проверка коррек
         ASSERT_EQ(nextStep.first, 2);// волшебная константа - значение в файле.
         ASSERT_EQ(nextStep.second, 2);// волшебная константа - значение в файле.
     } else{
-        std::cerr << "Файл не был открыт!" << std::endl;
+        std::cerr << "Файл не был открыт!"  << std::endl;
     }
     input.close();
 }

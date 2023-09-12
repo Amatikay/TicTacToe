@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "TicTacToe.h"
+#include "../include/TicTacToe.h"
 
 TicTacToe* TicTacToe::instance= nullptr;
 

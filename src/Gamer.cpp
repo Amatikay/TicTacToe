@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <cmath>
-#include "Gamer.h"
+#include "../include/Gamer.h"
 
 std::pair<unsigned int, unsigned int> PersonGamer::inputNextStep(std::istream& input) {
     unsigned int x, y;
