@@ -3,7 +3,7 @@ project(tic_tac_toe)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_subdirectory(googletest)
+
 
 add_library(tic_tac_toe_lib STATIC
         src/TicTacToe.cpp
@@ -18,7 +18,8 @@ add_library(tic_tac_toe_lib STATIC
 add_executable(tic_tac_toe_run src/main.cpp)
 target_link_libraries(tic_tac_toe_run tic_tac_toe_lib)
 
-add_executable(runTests test/test.cpp)
+add_subdirectory(googletest)
+add_executable(runTests test/test.cpp )
 target_link_libraries(runTests tic_tac_toe_lib gtest gtest_main)
 
 

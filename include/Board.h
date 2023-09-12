@@ -16,6 +16,7 @@ public:
     void makeMove(const unsigned int x, const unsigned int y, const char symbol);
     char* operator[](unsigned int i){ return board[i]; }
     size_t getSize(){ return size; }
+    Board (char* board[]);
 private:
     char** board;
     size_t size;

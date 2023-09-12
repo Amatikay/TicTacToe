@@ -41,7 +41,7 @@ TEST(PersonGamer, makeMove_Is_Correct_from_file)// проверка коррек
     std::ifstream input("../test/test.txt");
 
     if (input.is_open()) {
-        std::pair<unsigned int, unsigned int> nextStep = personGamer->makeMove(input,nullptr);
+        std::pair<unsigned int, unsigned int> nextStep = personGamer->makeMove(input, Board());
 
         ASSERT_EQ(nextStep.first, 2);// волшебная константа - значение в файле.
         ASSERT_EQ(nextStep.second, 2);// волшебная константа - значение в файле.
@@ -54,7 +54,7 @@ TEST(PersonGamer, makeMove_Is_Correct_from_terminal_input)
 {
     std::unique_ptr<Gamer> personGamer(new PersonGamer());
     std::istringstream input("2 2");
-    std::pair<unsigned int, unsigned int> nextStep = personGamer->makeMove(input,nullptr);
+    std::pair<unsigned int, unsigned int> nextStep = personGamer->makeMove(input, Board());
     ASSERT_EQ(nextStep.first, 2);
     ASSERT_EQ(nextStep.second, 2);
 }
@@ -66,19 +66,22 @@ TEST(PersonGamer, makeMove_Is_Correct_from_terminal_input)
 TEST(ComputerGamer, makeMove_EmptyBoard)
 {
     std::unique_ptr<Gamer> computerGamer(new ComputerGamer());
-    char board[3][3] = {{'_','_','_'},
-                        {'_','_','_'},
-                        {'_','_','_'}};
-    std::pair<unsigned int, unsigned int> nextStep = computerGamer->makeMove(std::cin,board);
+//    '_' '_' '_'
+//    '_' '_' '_'
+//    '_' '_' '_'
+    std::pair<unsigned int, unsigned int> nextStep = computerGamer->makeMove(std::cin,Board());
     ASSERT_EQ(nextStep.first, 0);
     ASSERT_EQ(nextStep.second, 0);
 }
 TEST(ComputerGamer, makeMove_onlyOneStep)
 {
     std::unique_ptr<Gamer> computerGamer(new ComputerGamer('0'));
-    char board[3][3] = {{'X','X','X'},
-                        {'X','X','X'},
-                        {'X','X','_'}};
+
+    char board1[3] = {'X','X','X'};
+    char board2[3] = {'X','X','X'};
+    char board3[3] = {'X','X','_'};
+    char* board[] = {board1, board2, board3};
+
     std::pair<unsigned int, unsigned int> nextStep = computerGamer->makeMove(std::cin,board);
     ASSERT_EQ(nextStep.first, 2);
     ASSERT_EQ(nextStep.second, 2);
@@ -86,9 +89,12 @@ TEST(ComputerGamer, makeMove_onlyOneStep)
 TEST(ComputerGamer, makeMove_onlyOneStep2)
 {
     std::unique_ptr<Gamer> computerGamer(new ComputerGamer('0'));
-    char board[3][3] = {{'0','0','0'},
-                        {'0','_','0'},
-                        {'0','0','0'}};
+
+    char board1[3] = {'0','0','0'};
+    char board2[3] = {'0','_','0'};
+    char board3[3] = {'0','0','0'};
+    char* board[] = {board1, board2, board3};
+
     std::pair<unsigned int, unsigned int> nextStep = computerGamer->makeMove(std::cin,board);
     ASSERT_EQ(nextStep.first, 1);
     ASSERT_EQ(nextStep.second, 1);

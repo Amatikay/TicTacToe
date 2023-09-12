@@ -18,6 +18,8 @@ Board::Board(size_t size) {
 
 void Board::makeMove(const unsigned int x, const unsigned int y, const char symbol) {
     this->board[x][y] = symbol;
-
 }
 
+Board::Board(char **board) {
+    this->board = board;
+}
